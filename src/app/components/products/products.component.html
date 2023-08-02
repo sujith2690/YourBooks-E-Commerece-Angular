@@ -11,7 +11,7 @@
                 </a>
                 <div class="flex flex-col flex-1 p-3">
                     <p class="flex-1 py-2 text-sm font-semibold leadi">{{item.title}}</p>
-                    <p class="text-end text-2xl">{{item?.price}}</p>
+                    <p class="text-end text-2xl">₹ {{removeDoller(item)| currencyConverter}}</p>
                     <button class="py-2 bg-yellow-500 rounded text-black" (click)="addCart(item?.isbn13)">
                         <fa-icon [icon]="cartIcon"></fa-icon>
                     </button>

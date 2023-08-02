@@ -14,6 +14,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HttpClientModule} from '@angular/common/http'
 import { BookApiService } from './service/apiService/book-api.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeEnIN from '@angular/common/locales/en-IN';
+import { CurrencyConverterPipe } from './pipe/currency-converter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+registerLocaleData(localeEnIN, 'en-IN');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +31,15 @@ import { BookApiService } from './service/apiService/book-api.service';
     ProductsComponent,
     SingleProductComponent,
     LoginComponent,
+    CurrencyConverterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [BookApiService],
   bootstrap: [AppComponent]

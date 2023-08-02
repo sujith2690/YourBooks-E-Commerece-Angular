@@ -21,5 +21,6 @@ export class NavbarComponent {
   }
   totalCart(){
     this.cartCount = this.cartService.getTotalCount();
+    return this.cartCount
   }
 }

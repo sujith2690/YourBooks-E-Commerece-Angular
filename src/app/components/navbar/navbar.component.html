@@ -17,12 +17,16 @@
         <ul class="hidden md:flex space-x-4 items-center justify-center">
             <li>
                 <a rel="noopener noreferrer" routerLink=""
-                    class="flex items-center flex-shrink-0 px-5 py-2 border-b-4 dark:border-yellow-400 dark:text-white">Home</a>
+                    class="flex items-center flex-shrink-0 px-5 py-2 dark:text-white">Home</a>
             </li>
             <li>
                 <a rel="noopener noreferrer" routerLink="/cart"
-                    class="flex items-center flex-shrink-0 px-5 py-2 border-b-4 dark:border-gray-700 dark:text-gray-400">Cart<fa-icon
-                        [icon]="cartIcon"></fa-icon></a>
+                    class="flex items-center flex-shrink-0 px-5 py-2  dark:text-white">
+                    Cart <fa-icon [icon]="cartIcon"></fa-icon>
+                    <span *ngIf="totalCart() > 0"
+                        class="bg-white rounded-md w-5 mb-5 text-orange-500 font-bold text-center">{{ totalCart()
+                        }}</span>
+                </a>
             </li>
             <li>
                 <div class="relative">
@@ -41,7 +45,8 @@
             </li>
             <li>
                 <button type="button" routerLink="/login"
-                    class="hidden px-6 py-2 font-semibold rounded lg:block bg-orange-500 text-gray-50"><fa-icon [icon]="loginIcon"></fa-icon> Log in</button>
+                    class="hidden px-6 py-2 font-semibold rounded lg:block bg-orange-500 text-gray-50"><fa-icon
+                        [icon]="loginIcon"></fa-icon> Log in</button>
             </li>
         </ul>
 
@@ -50,22 +55,18 @@
     <!-- Mobile Menu (Hidden by default) -->
     <ul class="md:hidden mt-2 space-y-2 text-white ml-10" [ngClass]="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }">
         <li>
-            <a href="#" class="block py-2 pl-4 pr-8 hover:bg-gray-700">
+            <a routerLink="" class="block py-2 pl-4 pr-8 hover:bg-gray-700">
                 <fa-icon [icon]="homeIcon"></fa-icon> Home
             </a>
         </li>
+        
         <li>
-            <a href="#" class="block py-2 pl-4 pr-8 hover:bg-gray-700">
-                <fa-icon [icon]="bookIcon"></fa-icon> All Books
-            </a>
-        </li>
-        <li>
-            <a href="#" class="block py-2 pl-4 pr-8 hover:bg-gray-700">
+            <a routerLink="/cart" class="block py-2 pl-4 pr-8 hover:bg-gray-700">
                 <fa-icon [icon]="cartIcon"></fa-icon> Cart
             </a>
         </li>
         <li>
-            <button class="text-white hover:text-gray-300 bg-yellow-400 px-6 py-2 rounded">
+            <button routerLink="/login" class="text-white hover:text-gray-300 bg-yellow-400 px-6 py-2 rounded">
                 <fa-icon [icon]="loginIcon"></fa-icon> Login
             </button>
         </li>
