@@ -17,4 +17,5 @@ export class BookApiService {
   singleBookDetails(bookId: any): Observable<any> {
     return this.http.get(`${this.baseUrl}/books/${bookId}`);
   }
+  
 }
