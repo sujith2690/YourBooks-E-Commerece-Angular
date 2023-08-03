@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
-import { BannerComponent } from './components/banner/banner.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SingleProductComponent } from './pages/single-product/single-product.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -30,7 +29,6 @@ registerLocaleData(localeEnIN, 'en-IN');
     NavbarComponent,
     HomeComponent,
     CartComponent,
-    BannerComponent,
     ProductsComponent,
     SingleProductComponent,
     LoginComponent,
